@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */; };
+		301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */; };
 		3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4821F7D9107006F5C92 /* AppDelegate.swift */; };
-		3086F4851F7D9107006F5C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4841F7D9107006F5C92 /* ViewController.swift */; };
+		3086F4851F7D9107006F5C92 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4841F7D9107006F5C92 /* InitialView.swift */; };
 		3086F4881F7D9107006F5C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3086F4861F7D9107006F5C92 /* Main.storyboard */; };
 		3086F48A1F7D9107006F5C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3086F4891F7D9107006F5C92 /* Assets.xcassets */; };
 		3086F48D1F7D9107006F5C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3086F48B1F7D9107006F5C92 /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		3086F47F1F7D9107006F5C92 /* QRpos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRpos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3086F4821F7D9107006F5C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3086F4841F7D9107006F5C92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3086F4841F7D9107006F5C92 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		3086F4871F7D9107006F5C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3086F4891F7D9107006F5C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3086F48C1F7D9107006F5C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301EC0D61F9D0DD80097915B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */,
+				301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3086F4761F7D9107006F5C92 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				3086F4821F7D9107006F5C92 /* AppDelegate.swift */,
-				3086F4841F7D9107006F5C92 /* ViewController.swift */,
+				3086F4841F7D9107006F5C92 /* InitialView.swift */,
 				3086F4861F7D9107006F5C92 /* Main.storyboard */,
 				3086F4891F7D9107006F5C92 /* Assets.xcassets */,
 				3086F48B1F7D9107006F5C92 /* LaunchScreen.storyboard */,
+				301EC0D61F9D0DD80097915B /* Cells */,
 				3086F48E1F7D9107006F5C92 /* Info.plist */,
 			);
 			path = QRpos;
@@ -259,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3086F4851F7D9107006F5C92 /* ViewController.swift in Sources */,
+				301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */,
+				3086F4851F7D9107006F5C92 /* InitialView.swift in Sources */,
+				301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */,
 				3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,13 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				DEVELOPMENT_TEAM = 953KR5WRL4;
 				INFOPLIST_FILE = QRpos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.QRpos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersqrpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -442,13 +459,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				DEVELOPMENT_TEAM = 953KR5WRL4;
 				INFOPLIST_FILE = QRpos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.QRpos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersqrpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
