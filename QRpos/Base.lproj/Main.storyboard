@@ -227,7 +227,7 @@
                                 <rect key="frame" x="30" y="128" width="693" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lSA-Gf-SB2" customClass="DrinkSelectionCell" customModule="QRpos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectionCells" id="lSA-Gf-SB2" customClass="DrinkSelectionCell" customModule="QRpos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="693" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lSA-Gf-SB2" id="zKn-EZ-V1a" customClass="DrinkSelectionCell" customModule="QRpos" customModuleProvider="target">
@@ -266,10 +266,6 @@
                                                 <outlet property="price" destination="7TX-Tu-MFv" id="YY5-mZ-FGa"/>
                                             </connections>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="itemPrice" destination="erV-ha-0tW" id="1DO-CP-bjf"/>
-                                            <outlet property="name" destination="y9I-aX-8nE" id="OgC-oY-f7J"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -277,23 +273,23 @@
                                 <rect key="frame" x="738" y="128" width="256" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZIV-qc-SRM" customClass="OrderCell" customModule="QRpos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCells" id="ZIV-qc-SRM" customClass="OrderCell" customModule="QRpos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="256" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZIV-qc-SRM" id="A6M-Wk-xEa">
                                             <rect key="frame" x="0.0" y="0.0" width="256" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9I-aX-8nE">
-                                                    <rect key="frame" x="8" y="0.0" width="164" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9I-aX-8nE">
+                                                    <rect key="frame" x="8" y="0.0" width="164" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="£4.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-WI-pNk">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£4.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-WI-pNk">
                                                     <rect key="frame" x="164" y="1" width="84" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="84" id="fZx-tw-cb5"/>
+                                                        <constraint firstAttribute="width" constant="84" id="4hX-uI-pWX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -302,7 +298,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£2.00 x 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erV-ha-0tW">
                                                     <rect key="frame" x="8" y="23" width="116" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="116" id="cd9-MI-DaG"/>
+                                                        <constraint firstAttribute="width" constant="116" id="py8-gm-3hV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -310,15 +306,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oSO-WI-pNk" firstAttribute="trailing" secondItem="A6M-Wk-xEa" secondAttribute="trailingMargin" id="1bg-99-O4q"/>
-                                                <constraint firstItem="oSO-WI-pNk" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="topMargin" constant="-7" id="CZS-Me-wM7"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="y9I-aX-8nE" secondAttribute="bottom" constant="12.5" id="RzE-ni-db2"/>
-                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="leading" secondItem="erV-ha-0tW" secondAttribute="leading" id="VK4-Cw-MJZ"/>
-                                                <constraint firstItem="erV-ha-0tW" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="topMargin" constant="15" id="ZTD-Qb-3pC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="y9I-aX-8nE" secondAttribute="trailing" constant="76" id="b0d-89-z3G"/>
-                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="top" id="jFb-fQ-bME"/>
-                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="centerY" secondItem="oSO-WI-pNk" secondAttribute="centerY" id="saA-zQ-JNA"/>
-                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="leading" secondItem="A6M-Wk-xEa" secondAttribute="leadingMargin" id="y1z-oi-u25"/>
+                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="top" id="7dT-nY-Nn9"/>
+                                                <constraint firstItem="oSO-WI-pNk" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="topMargin" constant="-7" id="MRM-wa-zCZ"/>
+                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="centerY" secondItem="oSO-WI-pNk" secondAttribute="centerY" id="PXg-gT-wMs"/>
+                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="leading" secondItem="erV-ha-0tW" secondAttribute="leading" id="Vdq-Ap-8kc"/>
+                                                <constraint firstItem="y9I-aX-8nE" firstAttribute="leading" secondItem="A6M-Wk-xEa" secondAttribute="leadingMargin" id="cBx-ie-lgD"/>
+                                                <constraint firstItem="erV-ha-0tW" firstAttribute="top" secondItem="A6M-Wk-xEa" secondAttribute="topMargin" constant="15" id="mTq-fW-inu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="y9I-aX-8nE" secondAttribute="trailing" constant="76" id="mng-bV-agK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="y9I-aX-8nE" secondAttribute="bottom" constant="12.5" id="uFH-8t-D1Q"/>
+                                                <constraint firstItem="oSO-WI-pNk" firstAttribute="trailing" secondItem="A6M-Wk-xEa" secondAttribute="trailingMargin" id="uro-3N-bDp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -382,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Het-nh-hH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.56249999999989" y="33.59375"/>
+            <point key="canvasLocation" x="1357" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a5Q-cp-Mm0">
@@ -515,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAU-4N-l0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720.8984375" y="43.75"/>
+            <point key="canvasLocation" x="2649" y="34"/>
         </scene>
         <!--QR Scan VC-->
         <scene sceneID="RIU-Qj-cj5">
@@ -548,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGa-bk-WIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530.6640625" y="-681.25"/>
+            <point key="canvasLocation" x="3918" y="-902"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xyJ-2E-lPr">
@@ -691,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Km-eF-SSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="-681"/>
+            <point key="canvasLocation" x="5057" y="-902"/>
         </scene>
         <!--Cash/Card Confirm VC-->
         <scene sceneID="nZh-di-Y7a">
@@ -793,7 +789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJW-BV-ofI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="44"/>
+            <point key="canvasLocation" x="5057" y="34"/>
         </scene>
     </scenes>
     <resources>
@@ -812,6 +808,6 @@
         <image name="visa" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uAq-gh-ayU"/>
+        <segue reference="Kpb-Q4-a0a"/>
     </inferredMetricsTieBreakers>
 </document>
