@@ -10,19 +10,46 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  //MARK Outlets
   @IBOutlet weak var newOrderButton: UIButton!
   @IBOutlet weak var closeTabButton: UIButton!
+  @IBOutlet weak var currentEventLabel: UILabel!
   
+  //MARK Variables
+  var currentEvent: String?
   
+  //MARK Actions
+  @IBAction func newOrderPressed(_ sender: Any) {
+    
+    if(currentEvent != nil) {
+      self.performSegue(withIdentifier: "initialToNewOrder", sender: nil)
+    }
+    
+  }
+  
+  @IBAction func closeTabPressed(_ sender: Any) {
+    
+    if(currentEvent != nil) {
+      self.performSegue(withIdentifier: "initialToCloseTab", sender: nil)
+    }
+    
+  }
+  
+  //MARK ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
+
     //Rounds the corners of the action buttons
     newOrderButton.layer.cornerRadius = 6
     newOrderButton.clipsToBounds = true
     closeTabButton.layer.cornerRadius = 6
     closeTabButton.clipsToBounds = true
+    
+    //API Get current event
+    currentEvent = "IOD Debate 2017"
+    
+    //Set current event label
+    currentEventLabel.text = currentEvent
     
   }
 

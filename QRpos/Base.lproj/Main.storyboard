@@ -38,7 +38,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Kk7-3i-V9Z" kind="show" id="ekM-Fp-y6D"/>
+                                    <action selector="newOrderPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXv-Fp-8Mp"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HC Logo white and grey" translatesAutoresizingMaskIntoConstraints="NO" id="w0g-j7-qG6">
@@ -60,7 +60,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Cld-q3-5e9" kind="show" id="20x-Yk-qp8"/>
+                                    <action selector="closeTabPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ued-c4-yAU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jersey Style Awards 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy8-jv-ddr">
@@ -95,7 +95,10 @@
                     </view>
                     <connections>
                         <outlet property="closeTabButton" destination="Kv3-lw-Bh7" id="4T3-CZ-hKJ"/>
+                        <outlet property="currentEventLabel" destination="Uy8-jv-ddr" id="W3b-wf-CUg"/>
                         <outlet property="newOrderButton" destination="fQv-X9-g6z" id="DAD-wz-Xcu"/>
+                        <segue destination="Kk7-3i-V9Z" kind="show" identifier="initialToNewOrder" id="O29-zE-fQV"/>
+                        <segue destination="Cld-q3-5e9" kind="show" identifier="initialToCloseTab" id="Lwy-OG-bFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -380,10 +383,10 @@
             </objects>
             <point key="canvasLocation" x="1357" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Close Tab VC-->
         <scene sceneID="a5Q-cp-Mm0">
             <objects>
-                <viewController id="Cld-q3-5e9" sceneMemberID="viewController">
+                <viewController id="Cld-q3-5e9" userLabel="Close Tab VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sTi-h8-rCu">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -441,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlG-8t-O6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="961"/>
+            <point key="canvasLocation" x="34" y="1075"/>
         </scene>
         <!--Payment Method VC-->
         <scene sceneID="d3q-7C-LOL">
