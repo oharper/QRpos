@@ -8,15 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
 
+  
   //MARK Outlets
   @IBOutlet weak var newOrderButton: UIButton!
   @IBOutlet weak var closeTabButton: UIButton!
   @IBOutlet weak var currentEventLabel: UILabel!
   
+  
   //MARK Variables
   var currentEvent: String?
+  
   
   //MARK Actions
   @IBAction func newOrderPressed(_ sender: Any) {
@@ -27,6 +30,7 @@ class ViewController: UIViewController {
     
   }
   
+  
   @IBAction func closeTabPressed(_ sender: Any) {
     
     if(currentEvent != nil) {
@@ -34,6 +38,7 @@ class ViewController: UIViewController {
     }
     
   }
+  
   
   //MARK ViewDidLoad
   override func viewDidLoad() {

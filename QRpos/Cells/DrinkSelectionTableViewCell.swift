@@ -12,6 +12,7 @@ import UIKit
 class DrinkSelectionCell: UITableViewCell {
   
   @IBOutlet weak var name: UILabel!
+  
   @IBOutlet weak var price: UILabel!
   
   

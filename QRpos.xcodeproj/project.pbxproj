@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBC81FA1309700E016EE /* OrderItem.swift */; };
 		301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */; };
 		301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */; };
 		3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4821F7D9107006F5C92 /* AppDelegate.swift */; };
-		3086F4851F7D9107006F5C92 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4841F7D9107006F5C92 /* InitialView.swift */; };
+		3086F4851F7D9107006F5C92 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4841F7D9107006F5C92 /* InitialViewController.swift */; };
 		3086F4881F7D9107006F5C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3086F4861F7D9107006F5C92 /* Main.storyboard */; };
 		3086F48A1F7D9107006F5C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3086F4891F7D9107006F5C92 /* Assets.xcassets */; };
 		3086F48D1F7D9107006F5C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3086F48B1F7D9107006F5C92 /* LaunchScreen.storyboard */; };
 		3086F4981F7D9107006F5C92 /* QRposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4971F7D9107006F5C92 /* QRposTests.swift */; };
 		3086F4A31F7D9107006F5C92 /* QRposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4A21F7D9107006F5C92 /* QRposUITests.swift */; };
+		30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30935A541F9FEEC40056A380 /* NewOrderViewController.swift */; };
+		3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6021FA1036300810B35 /* CloseTabViewController.swift */; };
+		3097F6081FA1055D00810B35 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6071FA1055D00810B35 /* Drink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301ADBC81FA1309700E016EE /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		3086F47F1F7D9107006F5C92 /* QRpos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRpos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3086F4821F7D9107006F5C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3086F4841F7D9107006F5C92 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		3086F4841F7D9107006F5C92 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		3086F4871F7D9107006F5C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3086F4891F7D9107006F5C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3086F48C1F7D9107006F5C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		3086F49E1F7D9107006F5C92 /* QRposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3086F4A21F7D9107006F5C92 /* QRposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRposUITests.swift; sourceTree = "<group>"; };
 		3086F4A41F7D9107006F5C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30935A541F9FEEC40056A380 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		3097F6021FA1036300810B35 /* CloseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTabViewController.swift; sourceTree = "<group>"; };
+		3097F6071FA1055D00810B35 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +98,9 @@
 		301EC0D91F9D3EC30097915B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3086F4841F7D9107006F5C92 /* InitialView.swift */,
+				3086F4841F7D9107006F5C92 /* InitialViewController.swift */,
+				30935A541F9FEEC40056A380 /* NewOrderViewController.swift */,
+				3097F6021FA1036300810B35 /* CloseTabViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3086F4821F7D9107006F5C92 /* AppDelegate.swift */,
+				3097F6061FA1055200810B35 /* Classes */,
 				301EC0D91F9D3EC30097915B /* Views */,
 				301EC0D61F9D0DD80097915B /* Cells */,
 				3086F4861F7D9107006F5C92 /* Main.storyboard */,
@@ -145,6 +156,15 @@
 				3086F4A41F7D9107006F5C92 /* Info.plist */,
 			);
 			path = QRposUITests;
+			sourceTree = "<group>";
+		};
+		3097F6061FA1055200810B35 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3097F6071FA1055D00810B35 /* Drink.swift */,
+				301ADBC81FA1309700E016EE /* OrderItem.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */,
-				3086F4851F7D9107006F5C92 /* InitialView.swift in Sources */,
+				3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */,
+				301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */,
+				30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */,
+				3086F4851F7D9107006F5C92 /* InitialViewController.swift in Sources */,
 				301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */,
+				3097F6081FA1055D00810B35 /* Drink.swift in Sources */,
 				3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
