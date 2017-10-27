@@ -14,15 +14,30 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   @IBOutlet weak var orderTable: UITableView!
   @IBOutlet weak var drinkSelectTable: UITableView!
   @IBOutlet weak var tabBar: UITabBar!
+  @IBOutlet weak var totalLabel: UILabel!
   
   //MARK Variables
   var current: [Drink]? = []
   var order: [OrderItem]? = []
+  var subTotal: Double = 0
   
   var beer: [Drink]? = []
   var wine: [Drink]? = []
   var spirits: [Drink]? = []
   var soft: [Drink]? = []
+  
+  //MARK Actions
+  @IBAction func voidPressed(_ sender: Any) {
+    performSegue(withIdentifier: "newOrderToInitial", sender: nil)
+  }
+  
+  @IBAction func donePressed(_ sender: Any) {
+    if !(order?.isEmpty)! {
+    performSegue(withIdentifier: "newOrderToPayment", sender: nil)
+    }
+  }
+  
+  
   
   //MARK ViewDidLoad
   override func viewDidLoad() {
@@ -45,6 +60,8 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
     self.orderTable.dataSource = self
     self.orderTable.delegate = self
     self.tabBar.delegate = self
+    
+    totalLabel.text = "Total: £" + String(format: "%.2f", subTotal)
     
   }
   
@@ -137,8 +154,13 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   
   //MARK Functions
   
+  
+  
   //Function that adds a given drink to the order or increments the quantity
   func addToOrder(Drink:Drink) {
+    
+    subTotal = subTotal + Drink.price
+    totalLabel.text = "Total: £" + String(format: "%.2f", subTotal)
     
     var drinkExists = false
     
@@ -162,6 +184,9 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   //Function that removes a given drink from the order or decrements the quantity
   func removeFromOrder(Drink: Drink) {
     
+    subTotal = subTotal - Drink.price
+    totalLabel.text = "Total: £" + String(format: "%.2f", subTotal)
+    
     for (index, element) in (order?.enumerated())! {
       if element.drink.name == Drink.name {
         
@@ -178,7 +203,16 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
     self.orderTable.reloadData()
     
   }
-
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (segue.identifier == "newOrderToPayment") {
+      let view : PaymentViewController = segue.destination as! PaymentViewController;
+      view.order = order
+      view.subTotal = subTotal
+    }
+  }
+  
   
   
 }

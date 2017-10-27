@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBC81FA1309700E016EE /* OrderItem.swift */; };
+		301ADBCB1FA266B900E016EE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCA1FA266B900E016EE /* PaymentViewController.swift */; };
+		301ADBCD1FA3922000E016EE /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCC1FA3922000E016EE /* QRViewController.swift */; };
+		301ADBCF1FA3922B00E016EE /* CashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCE1FA3922B00E016EE /* CashViewController.swift */; };
+		301ADBD11FA3923300E016EE /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBD01FA3923300E016EE /* CardViewController.swift */; };
+		301ADBD31FA3A5C200E016EE /* QRConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBD21FA3A5C200E016EE /* QRConfirmViewController.swift */; };
 		301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */; };
 		301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */; };
 		3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4821F7D9107006F5C92 /* AppDelegate.swift */; };
@@ -41,6 +46,11 @@
 
 /* Begin PBXFileReference section */
 		301ADBC81FA1309700E016EE /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		301ADBCA1FA266B900E016EE /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		301ADBCC1FA3922000E016EE /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		301ADBCE1FA3922B00E016EE /* CashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashViewController.swift; sourceTree = "<group>"; };
+		301ADBD01FA3923300E016EE /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		301ADBD21FA3A5C200E016EE /* QRConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRConfirmViewController.swift; sourceTree = "<group>"; };
 		301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		3086F47F1F7D9107006F5C92 /* QRpos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRpos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				3086F4841F7D9107006F5C92 /* InitialViewController.swift */,
-				30935A541F9FEEC40056A380 /* NewOrderViewController.swift */,
 				3097F6021FA1036300810B35 /* CloseTabViewController.swift */,
+				30935A541F9FEEC40056A380 /* NewOrderViewController.swift */,
+				301ADBCA1FA266B900E016EE /* PaymentViewController.swift */,
+				301ADBCE1FA3922B00E016EE /* CashViewController.swift */,
+				301ADBD01FA3923300E016EE /* CardViewController.swift */,
+				301ADBCC1FA3922000E016EE /* QRViewController.swift */,
+				301ADBD21FA3A5C200E016EE /* QRConfirmViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,12 +317,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */,
+				301ADBCF1FA3922B00E016EE /* CashViewController.swift in Sources */,
+				301ADBCD1FA3922000E016EE /* QRViewController.swift in Sources */,
 				3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */,
+				301ADBD31FA3A5C200E016EE /* QRConfirmViewController.swift in Sources */,
 				301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */,
 				30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */,
 				3086F4851F7D9107006F5C92 /* InitialViewController.swift in Sources */,
 				301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */,
+				301ADBD11FA3923300E016EE /* CardViewController.swift in Sources */,
 				3097F6081FA1055D00810B35 /* Drink.swift in Sources */,
+				301ADBCB1FA266B900E016EE /* PaymentViewController.swift in Sources */,
 				3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

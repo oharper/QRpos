@@ -173,7 +173,7 @@
                                 </constraints>
                                 <state key="normal" image="success"/>
                                 <connections>
-                                    <segue destination="zEc-Z5-E8q" kind="presentation" modalPresentationStyle="overCurrentContext" id="ElR-bN-65x"/>
+                                    <action selector="donePressed:" destination="Kk7-3i-V9Z" eventType="touchUpInside" id="me1-kx-QZK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4v-qt-v43">
@@ -183,6 +183,9 @@
                                     <constraint firstAttribute="height" constant="85" id="O9r-gR-JGG"/>
                                 </constraints>
                                 <state key="normal" image="error"/>
+                                <connections>
+                                    <action selector="voidPressed:" destination="Kk7-3i-V9Z" eventType="touchUpInside" id="cVz-4c-RUA"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJg-id-PdU">
                                 <rect key="frame" x="30" y="128" width="676" height="540"/>
@@ -367,6 +370,9 @@
                         <outlet property="drinkSelectTable" destination="WJg-id-PdU" id="hGd-Mb-ubF"/>
                         <outlet property="orderTable" destination="uWt-Ru-869" id="6OS-gN-x7W"/>
                         <outlet property="tabBar" destination="2SN-dq-jJP" id="kWd-WU-cNe"/>
+                        <outlet property="totalLabel" destination="gkV-jz-z3G" id="J4a-oP-hDK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="newOrderToInitial" animates="NO" id="fh8-oL-wut"/>
+                        <segue destination="zEc-Z5-E8q" kind="presentation" identifier="newOrderToPayment" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Pz2-oc-MqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Het-nh-hH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,13 +453,16 @@
         <!--Payment Method VC-->
         <scene sceneID="d3q-7C-LOL">
             <objects>
-                <viewController id="zEc-Z5-E8q" userLabel="Payment Method VC" sceneMemberID="viewController">
+                <viewController id="zEc-Z5-E8q" userLabel="Payment Method VC" customClass="PaymentViewController" customModule="QRpos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="aAR-Ny-6ji">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOX-jY-Jgs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIA-U0-xzr">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <connections>
+                                    <action selector="backgroundPressed:" destination="zEc-Z5-E8q" eventType="touchUpInside" id="3wD-tR-Iwa"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="i7M-zu-N9y">
                                 <rect key="frame" x="100" y="279" width="824" height="200"/>
@@ -465,7 +474,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="clipboard"/>
                                         <connections>
-                                            <segue destination="HGw-bp-LhE" kind="show" id="ZFc-ct-Aba"/>
+                                            <action selector="tabPressed:" destination="zEc-Z5-E8q" eventType="touchUpInside" id="Y7Y-I0-JTu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-72-2Ud">
@@ -475,14 +484,14 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="visa"/>
                                         <connections>
-                                            <segue destination="Dz1-gi-VwQ" kind="show" id="uAq-gh-ayU"/>
+                                            <action selector="cardPressed:" destination="zEc-Z5-E8q" eventType="touchUpInside" id="Kmr-Bc-80H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqn-hq-qJm">
                                         <rect key="frame" x="624" y="0.0" width="200" height="200"/>
                                         <state key="normal" title="Button" image="money"/>
                                         <connections>
-                                            <segue destination="Dz1-gi-VwQ" kind="show" id="Kpb-Q4-a0a"/>
+                                            <action selector="cashPressed:" destination="zEc-Z5-E8q" eventType="touchUpInside" id="cJd-K8-kDn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -491,7 +500,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Payment Method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndm-4L-fwx">
-                                <rect key="frame" x="0.0" y="50" width="1024" height="68.5"/>
+                                <rect key="frame" x="205" y="50" width="614.5" height="68.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="57"/>
                                 <color key="textColor" red="0.99089968029461684" green="0.98561957374193521" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -499,63 +508,93 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1199149563908577" green="0.30857172608375549" blue="0.63688141107559204" alpha="0.89919238880368102" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pOX-jY-Jgs" firstAttribute="leading" secondItem="Ndm-4L-fwx" secondAttribute="leading" id="04o-eB-1IN"/>
                             <constraint firstItem="Ndm-4L-fwx" firstAttribute="top" secondItem="QuW-c8-icL" secondAttribute="top" constant="30" id="4zq-bw-rtG"/>
-                            <constraint firstAttribute="trailing" secondItem="pOX-jY-Jgs" secondAttribute="trailing" id="64J-3m-hth"/>
-                            <constraint firstItem="pOX-jY-Jgs" firstAttribute="leading" secondItem="aAR-Ny-6ji" secondAttribute="leading" id="DgP-T3-B9P"/>
+                            <constraint firstItem="RIA-U0-xzr" firstAttribute="bottom" secondItem="QuW-c8-icL" secondAttribute="bottom" id="ARS-wb-fff"/>
+                            <constraint firstItem="RIA-U0-xzr" firstAttribute="trailing" secondItem="QuW-c8-icL" secondAttribute="trailing" id="D1W-rY-D8C"/>
                             <constraint firstItem="i7M-zu-N9y" firstAttribute="leading" secondItem="QuW-c8-icL" secondAttribute="leading" constant="100" id="Hwe-KT-dWH"/>
                             <constraint firstItem="QuW-c8-icL" firstAttribute="bottom" secondItem="i7M-zu-N9y" secondAttribute="bottom" constant="289" id="RY1-sd-AGn"/>
                             <constraint firstItem="Ndm-4L-fwx" firstAttribute="centerX" secondItem="i7M-zu-N9y" secondAttribute="centerX" id="cYa-9B-s2A"/>
                             <constraint firstItem="i7M-zu-N9y" firstAttribute="top" secondItem="aAR-Ny-6ji" secondAttribute="top" constant="279" id="cc5-ES-yyK"/>
-                            <constraint firstItem="pOX-jY-Jgs" firstAttribute="trailing" secondItem="Ndm-4L-fwx" secondAttribute="trailing" id="juj-EK-cab"/>
-                            <constraint firstItem="pOX-jY-Jgs" firstAttribute="top" secondItem="aAR-Ny-6ji" secondAttribute="top" id="oyo-af-e3b"/>
-                            <constraint firstItem="pOX-jY-Jgs" firstAttribute="bottom" secondItem="QuW-c8-icL" secondAttribute="bottom" id="tNr-Wj-yKt"/>
+                            <constraint firstItem="RIA-U0-xzr" firstAttribute="top" secondItem="aAR-Ny-6ji" secondAttribute="top" id="clI-mW-UQM"/>
+                            <constraint firstItem="QuW-c8-icL" firstAttribute="trailing" secondItem="i7M-zu-N9y" secondAttribute="trailing" constant="100" id="dW0-B4-u6z"/>
+                            <constraint firstItem="RIA-U0-xzr" firstAttribute="leading" secondItem="QuW-c8-icL" secondAttribute="leading" id="vmS-um-SMc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QuW-c8-icL"/>
                     </view>
                     <navigationItem key="navigationItem" id="H5n-Kg-BRp"/>
+                    <connections>
+                        <segue destination="Kk7-3i-V9Z" kind="presentation" identifier="paymentToNewOrder" modalTransitionStyle="crossDissolve" id="ThQ-2h-7DH"/>
+                        <segue destination="HGw-bp-LhE" kind="show" identifier="paymentToQR" id="rNZ-yB-Ra6"/>
+                        <segue destination="Dz1-gi-VwQ" kind="show" identifier="paymentToCash" id="pH0-3p-66o"/>
+                        <segue destination="3Gh-bk-V72" kind="show" identifier="paymentToCard" id="ViM-F2-Okm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAU-4N-l0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648.4375" y="33.59375"/>
+            <point key="canvasLocation" x="2638.4765625" y="33.59375"/>
         </scene>
         <!--QR Scan VC-->
         <scene sceneID="RIU-Qj-cj5">
             <objects>
-                <viewController id="HGw-bp-LhE" userLabel="QR Scan VC" sceneMemberID="viewController">
+                <viewController id="HGw-bp-LhE" userLabel="QR Scan VC" customClass="QRViewController" customModule="QRpos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j5g-GT-Kf2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Scan QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-em-3e1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Scan QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-em-3e1">
                                 <rect key="frame" x="0.0" y="52" width="1024" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="57"/>
                                 <color key="textColor" red="0.99089968029999997" green="0.98561957369999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOZ-AA-2WE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOZ-AA-2WE">
                                 <rect key="frame" x="370" y="327" width="284" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="QR scan here"/>
                                 <connections>
-                                    <segue destination="n3m-pR-cqw" kind="show" id="bDS-XP-OPj"/>
+                                    <action selector="qrButtonPressed:" destination="HGw-bp-LhE" eventType="touchUpInside" id="N4P-8O-zJ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5o-qd-t34">
+                                <rect key="frame" x="20" y="598" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="f0U-bQ-3xV"/>
+                                </constraints>
+                                <state key="normal" title="I" image="back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="Dz1-gi-VwQ" eventType="touchUpInside" id="MGI-WM-fcd"/>
+                                    <action selector="backPressed:" destination="HGw-bp-LhE" eventType="touchUpInside" id="OIf-hQ-jhf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1199149563908577" green="0.30857172608375549" blue="0.63688141107559204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bQk-em-3e1" firstAttribute="top" secondItem="Pe0-ja-5HD" secondAttribute="top" constant="32" id="86S-Mm-doT"/>
+                            <constraint firstAttribute="bottom" secondItem="J5o-qd-t34" secondAttribute="bottom" constant="20" symbolic="YES" id="djf-kr-O6y"/>
+                            <constraint firstItem="Pe0-ja-5HD" firstAttribute="trailing" secondItem="J5o-qd-t34" secondAttribute="trailing" constant="854" id="e5M-SW-hzJ"/>
+                            <constraint firstItem="bQk-em-3e1" firstAttribute="centerX" secondItem="lOZ-AA-2WE" secondAttribute="centerX" id="lIf-S6-nUM"/>
+                            <constraint firstAttribute="trailing" secondItem="bQk-em-3e1" secondAttribute="trailing" id="nrk-UU-6hq"/>
+                            <constraint firstItem="Pe0-ja-5HD" firstAttribute="bottom" secondItem="lOZ-AA-2WE" secondAttribute="bottom" constant="326" id="p7u-eM-3BM"/>
+                            <constraint firstItem="lOZ-AA-2WE" firstAttribute="centerY" secondItem="j5g-GT-Kf2" secondAttribute="centerY" id="qfe-EP-J3v"/>
+                            <constraint firstItem="J5o-qd-t34" firstAttribute="leading" secondItem="j5g-GT-Kf2" secondAttribute="leadingMargin" id="riK-n2-Jgv"/>
+                            <constraint firstItem="lOZ-AA-2WE" firstAttribute="leading" secondItem="Pe0-ja-5HD" secondAttribute="leading" constant="370" id="udG-Q5-G4L"/>
+                            <constraint firstItem="bQk-em-3e1" firstAttribute="leading" secondItem="j5g-GT-Kf2" secondAttribute="leading" id="zTn-vq-rK6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pe0-ja-5HD"/>
                     </view>
+                    <connections>
+                        <segue destination="zEc-Z5-E8q" kind="show" identifier="qrToPayment" animates="NO" id="nQr-PE-kCD"/>
+                        <segue destination="n3m-pR-cqw" kind="show" identifier="qrToConfirm" id="0vG-Dw-cA1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGa-bk-WIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3918" y="-902"/>
         </scene>
-        <!--View Controller-->
+        <!--QRConfirmView Controller-->
         <scene sceneID="xyJ-2E-lPr">
             <objects>
-                <viewController id="n3m-pR-cqw" sceneMemberID="viewController">
+                <viewController id="n3m-pR-cqw" userLabel="QRConfirmView Controller" customClass="QRConfirmViewController" customModule="QRpos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNI-9J-2a3">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -573,12 +612,15 @@
                                     <constraint firstAttribute="width" constant="250" id="vcC-Ha-b6r"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="n3m-pR-cqw" eventType="touchUpInside" id="ckL-Ca-pO1"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJo-Hz-iRX">
                                 <rect key="frame" x="725" y="90" width="264" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" id="HdS-Hp-u7F" customClass="orderTableViewCell" customModule="QRpos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderCell" id="HdS-Hp-u7F" customClass="OrderCell" customModule="QRpos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="264" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdS-Hp-u7F" id="q3N-NA-6ww">
@@ -623,9 +665,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="aNG-8y-J0W" id="c72-S3-7QV"/>
-                                            <outlet property="quantityPriceLabel" destination="bYU-du-ht9" id="Ujs-Wk-3rx"/>
-                                            <outlet property="singlePriceLabel" destination="4ab-ER-UYv" id="P9n-h8-kZB"/>
+                                            <outlet property="itemPrice" destination="4ab-ER-UYv" id="6jP-11-mTa"/>
+                                            <outlet property="itemTotal" destination="bYU-du-ht9" id="tc2-dc-KtP"/>
+                                            <outlet property="name" destination="aNG-8y-J0W" id="4xs-gj-qUq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -661,6 +703,9 @@
                                     <constraint firstAttribute="width" constant="250" id="HE2-mE-92e"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="success"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="n3m-pR-cqw" eventType="touchUpInside" id="cmW-Ph-Uhk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1199149563908577" green="0.30857172608375549" blue="0.63688141107559204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -690,15 +735,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ual-dY-OyM"/>
                     </view>
+                    <connections>
+                        <outlet property="orderTable" destination="dJo-Hz-iRX" id="R1J-Ad-tEn"/>
+                        <outlet property="totalLabel" destination="i1X-Qy-flj" id="zti-s2-9sY"/>
+                        <segue destination="HGw-bp-LhE" kind="show" identifier="qrConfirmToQRScan" animates="NO" id="ybB-UZ-RTT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Km-eF-SSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5057" y="-902"/>
         </scene>
-        <!--Cash/Card Confirm VC-->
+        <!--Cash Confirm VC-->
         <scene sceneID="nZh-di-Y7a">
             <objects>
-                <viewController id="Dz1-gi-VwQ" userLabel="Cash/Card Confirm VC" sceneMemberID="viewController">
+                <viewController id="Dz1-gi-VwQ" userLabel="Cash Confirm VC" customClass="CashViewController" customModule="QRpos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skL-jR-tqa">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -719,6 +769,9 @@
                                             <constraint firstAttribute="width" constant="150" id="be0-jQ-OJb"/>
                                         </constraints>
                                         <state key="normal" title="I" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="Dz1-gi-VwQ" eventType="touchUpInside" id="xMN-bT-5VD"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£147.20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jp-zJ-R76">
                                         <rect key="frame" x="150" y="0.0" width="624" height="150"/>
@@ -735,6 +788,9 @@
                                         <state key="normal" title="Confirm" image="success">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="donePressed:" destination="Dz1-gi-VwQ" eventType="touchUpInside" id="JUH-zA-Nwj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -764,6 +820,9 @@
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculatePressed:" destination="Dz1-gi-VwQ" eventType="touchUpInside" id="epx-1m-8Bl"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Change Due: £200.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmu-YC-ec4">
                                         <rect key="frame" x="424" y="0.0" width="300" height="58"/>
@@ -792,10 +851,85 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PBq-x4-gcY"/>
                     </view>
+                    <connections>
+                        <outlet property="changeLabel" destination="Mmu-YC-ec4" id="5W7-8s-JKa"/>
+                        <outlet property="changeTextField" destination="3PC-Kg-MhZ" id="tp6-lo-jAu"/>
+                        <outlet property="totalLabel" destination="2jp-zJ-R76" id="RDQ-63-nho"/>
+                        <segue destination="zEc-Z5-E8q" kind="show" identifier="cashToPayment" animates="NO" id="6OY-ws-SUW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJW-BV-ofI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5057" y="34"/>
+        </scene>
+        <!--Card Confirm VC-->
+        <scene sceneID="2md-TQ-NLs">
+            <objects>
+                <viewController id="3Gh-bk-V72" userLabel="Card Confirm VC" customClass="CardViewController" customModule="QRpos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="epW-iL-cul">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Card Payment?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGk-Ta-Dat">
+                                <rect key="frame" x="0.0" y="30" width="1024" height="68.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="57"/>
+                                <color key="textColor" red="0.99089968029999997" green="0.98561957369999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-Ex-0tg">
+                                <rect key="frame" x="50" y="263" width="924" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTi-hT-qOA">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="sBL-vv-Jq5"/>
+                                        </constraints>
+                                        <state key="normal" title="I" image="back"/>
+                                        <connections>
+                                            <action selector="backPressed:" destination="3Gh-bk-V72" eventType="touchUpInside" id="0ZM-Qv-PGW"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£147.20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-gH-ecZ">
+                                        <rect key="frame" x="150" y="0.0" width="624" height="150"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="160"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MR6-z1-4FR">
+                                        <rect key="frame" x="774" y="0.0" width="150" height="150"/>
+                                        <state key="normal" title="Confirm" image="success">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="donePressed:" destination="3Gh-bk-V72" eventType="touchUpInside" id="t8x-W1-hHq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aVN-gH-ecZ" firstAttribute="centerX" secondItem="jzc-Ex-0tg" secondAttribute="centerX" id="opZ-za-8Qa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11991495639999999" green="0.3085717261" blue="0.63688141109999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jzc-Ex-0tg" firstAttribute="leading" secondItem="WrL-og-RUM" secondAttribute="leading" constant="50" id="3Lb-CS-NLf"/>
+                            <constraint firstAttribute="trailing" secondItem="kGk-Ta-Dat" secondAttribute="trailing" id="KaH-py-KJP"/>
+                            <constraint firstItem="jzc-Ex-0tg" firstAttribute="top" secondItem="epW-iL-cul" secondAttribute="top" constant="263" id="NWv-mr-UXE"/>
+                            <constraint firstItem="kGk-Ta-Dat" firstAttribute="centerX" secondItem="jzc-Ex-0tg" secondAttribute="centerX" id="YU4-sX-NNe"/>
+                            <constraint firstItem="WrL-og-RUM" firstAttribute="bottom" secondItem="jzc-Ex-0tg" secondAttribute="bottom" constant="355" id="mG4-FH-1uv"/>
+                            <constraint firstItem="kGk-Ta-Dat" firstAttribute="leading" secondItem="epW-iL-cul" secondAttribute="leading" id="qQ7-E3-IX9"/>
+                            <constraint firstItem="kGk-Ta-Dat" firstAttribute="top" secondItem="WrL-og-RUM" secondAttribute="top" constant="10" id="vc1-tx-5w4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WrL-og-RUM"/>
+                    </view>
+                    <connections>
+                        <outlet property="totalLabel" destination="aVN-gH-ecZ" id="28g-V3-DN2"/>
+                        <segue destination="zEc-Z5-E8q" kind="show" identifier="cardToPayment" animates="NO" id="h6q-4o-a0W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJo-yp-KJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5057" y="965"/>
         </scene>
     </scenes>
     <resources>
@@ -814,6 +948,9 @@
         <image name="visa" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kpb-Q4-a0a"/>
+        <segue reference="ybB-UZ-RTT"/>
+        <segue reference="Pz2-oc-MqK"/>
+        <segue reference="O29-zE-fQV"/>
+        <segue reference="fh8-oL-wut"/>
     </inferredMetricsTieBreakers>
 </document>
