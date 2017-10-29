@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBC81FA1309700E016EE /* OrderItem.swift */; };
 		301ADBCB1FA266B900E016EE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCA1FA266B900E016EE /* PaymentViewController.swift */; };
 		301ADBCD1FA3922000E016EE /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCC1FA3922000E016EE /* QRViewController.swift */; };
 		301ADBCF1FA3922B00E016EE /* CashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBCE1FA3922B00E016EE /* CashViewController.swift */; };
@@ -15,6 +14,13 @@
 		301ADBD31FA3A5C200E016EE /* QRConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ADBD21FA3A5C200E016EE /* QRConfirmViewController.swift */; };
 		301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */; };
 		301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */; };
+		307724C01FA65FBC00493B91 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BA1FA65FBB00493B91 /* Drinks.swift */; };
+		307724C11FA65FBC00493B91 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BB1FA65FBB00493B91 /* Order.swift */; };
+		307724C21FA65FBC00493B91 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BC1FA65FBB00493B91 /* Global.swift */; };
+		307724C31FA65FBC00493B91 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BD1FA65FBC00493B91 /* OrderItem.swift */; };
+		307724C41FA65FBC00493B91 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BE1FA65FBC00493B91 /* Alerts.swift */; };
+		307724C51FA65FBC00493B91 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724BF1FA65FBC00493B91 /* Drink.swift */; };
+		307724C71FA65FDF00493B91 /* OpenOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307724C61FA65FDF00493B91 /* OpenOrdersTableViewCell.swift */; };
 		3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4821F7D9107006F5C92 /* AppDelegate.swift */; };
 		3086F4851F7D9107006F5C92 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4841F7D9107006F5C92 /* InitialViewController.swift */; };
 		3086F4881F7D9107006F5C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3086F4861F7D9107006F5C92 /* Main.storyboard */; };
@@ -24,7 +30,6 @@
 		3086F4A31F7D9107006F5C92 /* QRposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086F4A21F7D9107006F5C92 /* QRposUITests.swift */; };
 		30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30935A541F9FEEC40056A380 /* NewOrderViewController.swift */; };
 		3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6021FA1036300810B35 /* CloseTabViewController.swift */; };
-		3097F6081FA1055D00810B35 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6071FA1055D00810B35 /* Drink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		301ADBC81FA1309700E016EE /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		301ADBCA1FA266B900E016EE /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		301ADBCC1FA3922000E016EE /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		301ADBCE1FA3922B00E016EE /* CashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +57,13 @@
 		301ADBD21FA3A5C200E016EE /* QRConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRConfirmViewController.swift; sourceTree = "<group>"; };
 		301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		307724BA1FA65FBB00493B91 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		307724BB1FA65FBB00493B91 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		307724BC1FA65FBB00493B91 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		307724BD1FA65FBC00493B91 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = "../../../QRPOS BACKUP 27:10:17/29:10:17/QRpos/Classes/OrderItem.swift"; sourceTree = "<group>"; };
+		307724BE1FA65FBC00493B91 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		307724BF1FA65FBC00493B91 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Drink.swift; path = "../../../QRPOS BACKUP 27:10:17/29:10:17/QRpos/Classes/Drink.swift"; sourceTree = "<group>"; };
+		307724C61FA65FDF00493B91 /* OpenOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		3086F47F1F7D9107006F5C92 /* QRpos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRpos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3086F4821F7D9107006F5C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3086F4841F7D9107006F5C92 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +79,6 @@
 		3086F4A41F7D9107006F5C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30935A541F9FEEC40056A380 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		3097F6021FA1036300810B35 /* CloseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTabViewController.swift; sourceTree = "<group>"; };
-		3097F6071FA1055D00810B35 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		301EC0D61F9D0DD80097915B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				307724C61FA65FDF00493B91 /* OpenOrdersTableViewCell.swift */,
 				301EC0D41F9D0DCC0097915B /* DrinkSelectionTableViewCell.swift */,
 				301EC0D71F9D10D40097915B /* OrderTableViewCell.swift */,
 			);
@@ -176,8 +187,12 @@
 		3097F6061FA1055200810B35 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3097F6071FA1055D00810B35 /* Drink.swift */,
-				301ADBC81FA1309700E016EE /* OrderItem.swift */,
+				307724BE1FA65FBC00493B91 /* Alerts.swift */,
+				307724BF1FA65FBC00493B91 /* Drink.swift */,
+				307724BA1FA65FBB00493B91 /* Drinks.swift */,
+				307724BC1FA65FBB00493B91 /* Global.swift */,
+				307724BB1FA65FBB00493B91 /* Order.swift */,
+				307724BD1FA65FBC00493B91 /* OrderItem.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -317,18 +332,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				301EC0D51F9D0DCD0097915B /* DrinkSelectionTableViewCell.swift in Sources */,
+				307724C51FA65FBC00493B91 /* Drink.swift in Sources */,
 				301ADBCF1FA3922B00E016EE /* CashViewController.swift in Sources */,
 				301ADBCD1FA3922000E016EE /* QRViewController.swift in Sources */,
 				3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */,
 				301ADBD31FA3A5C200E016EE /* QRConfirmViewController.swift in Sources */,
-				301ADBC91FA1309700E016EE /* OrderItem.swift in Sources */,
+				307724C01FA65FBC00493B91 /* Drinks.swift in Sources */,
 				30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */,
+				307724C21FA65FBC00493B91 /* Global.swift in Sources */,
 				3086F4851F7D9107006F5C92 /* InitialViewController.swift in Sources */,
 				301EC0D81F9D10D40097915B /* OrderTableViewCell.swift in Sources */,
 				301ADBD11FA3923300E016EE /* CardViewController.swift in Sources */,
-				3097F6081FA1055D00810B35 /* Drink.swift in Sources */,
+				307724C11FA65FBC00493B91 /* Order.swift in Sources */,
 				301ADBCB1FA266B900E016EE /* PaymentViewController.swift in Sources */,
 				3086F4831F7D9107006F5C92 /* AppDelegate.swift in Sources */,
+				307724C41FA65FBC00493B91 /* Alerts.swift in Sources */,
+				307724C71FA65FDF00493B91 /* OpenOrdersTableViewCell.swift in Sources */,
+				307724C31FA65FBC00493B91 /* OrderItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
