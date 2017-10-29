@@ -10,35 +10,36 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-  
   //MARK Outlets
   @IBOutlet weak var newOrderButton: UIButton!
   @IBOutlet weak var closeTabButton: UIButton!
+  @IBOutlet weak var openOrdersButton: UIButton!
   @IBOutlet weak var currentEventLabel: UILabel!
-  
-  
-  //MARK Variables
-  var currentEvent: String?
-  
+  @IBOutlet weak var tableServiceSwitch: UISwitch!
+  @IBOutlet weak var iPadLabel: UILabel!
   
   //MARK Actions
+  
+  //New Order Button Segue
   @IBAction func newOrderPressed(_ sender: Any) {
-    
-    if(currentEvent != nil) {
       self.performSegue(withIdentifier: "initialToNewOrder", sender: nil)
-    }
-    
   }
   
-  
+  //Close Tab Button Segue
   @IBAction func closeTabPressed(_ sender: Any) {
-    
-    if(currentEvent != nil) {
       self.performSegue(withIdentifier: "initialToCloseTab", sender: nil)
-    }
-    
   }
   
+  //Table Service Switch Actions
+  @IBAction func tableServiceSwitched(_ sender: Any) {
+    if tableServiceSwitch.isOn {
+      tableService = true
+      iPadLabel.text = "Table Service iPad"
+    } else {
+      tableService = false
+      iPadLabel.text = "Bar iPad"
+    }
+  }
   
   //MARK ViewDidLoad
   override func viewDidLoad() {
@@ -49,20 +50,22 @@ class InitialViewController: UIViewController {
     newOrderButton.clipsToBounds = true
     closeTabButton.layer.cornerRadius = 6
     closeTabButton.clipsToBounds = true
-    
-    //API Get current event
-    currentEvent = "IOD Debate 2017"
+    openOrdersButton.layer.cornerRadius = 6
+    openOrdersButton.clipsToBounds = true
     
     //Set current event label
     currentEventLabel.text = currentEvent
     
+    if tableService {
+      tableServiceSwitch.setOn(true, animated: true)
+    }
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
-
+  
 }
 

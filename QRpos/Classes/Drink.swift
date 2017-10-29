@@ -13,11 +13,9 @@ class Drink {
   var name: String
   var price: Double
   
-  
   init(Name:String, Price:Double) {
-    
     self.name = Name
     self.price = Price
-    
 }
+  
 }
