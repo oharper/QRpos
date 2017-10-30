@@ -10,7 +10,7 @@ import Foundation
 
 class Order {
 
-  var currentEvent: String
+  var event: String
   var drinks: [OrderItem]?
   var total: Double
   var orderStatus: String
@@ -20,7 +20,7 @@ class Order {
 
   init(drinks:[OrderItem]? = [], orderStatus: String = "", deliveryTable: String = "", paymentMethod: String = "", currentEvent: String = "", total: Double = 0, tabNumber: String = "") {
 
-    self.currentEvent = currentEvent
+    self.event = currentEvent
     self.drinks = drinks
     self.orderStatus = orderStatus
     self.deliveryTable = deliveryTable
