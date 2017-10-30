@@ -1,0 +1,6 @@
+framework module Pods_QRposTests {
+  umbrella header "Pods-QRposTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
