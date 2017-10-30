@@ -47,6 +47,12 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Sets the initial text of total label
     totalLabel.text = "Total: £" + String(format: "%.2f", currentOrder.total)
+    
+    
+    GetDrinks(Category: "Wine", completionHandler: { response in
+      self.currentDrinks.wine = response
+    })
+    
   }
   
   override func didReceiveMemoryWarning() {

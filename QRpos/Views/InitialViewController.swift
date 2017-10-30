@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class InitialViewController: UIViewController {
 
@@ -59,6 +61,10 @@ class InitialViewController: UIViewController {
     if tableService {
       tableServiceSwitch.setOn(true, animated: true)
     }
+    
+    
+      
+    
   }
   
   override func didReceiveMemoryWarning() {
