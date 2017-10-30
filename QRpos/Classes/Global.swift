@@ -9,4 +9,4 @@
 import UIKit
 
 var tableService = false
-var currentEvent = "Training Event"
+var currentEvent = "IOD Debate"

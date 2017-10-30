@@ -320,16 +320,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixer - Coke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPR-Ev-KdP">
-                                                    <rect key="frame" x="18" y="8" width="300" height="33.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="bIN-OC-O5c"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="18" y="8" width="471" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£20.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-Tu-MFv">
-                                                    <rect key="frame" x="558" y="8" width="100" height="33.5"/>
+                                                    <rect key="frame" x="558" y="8" width="100" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="MEb-RM-H6W"/>
                                                     </constraints>
@@ -339,12 +336,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="top" secondItem="zKn-EZ-V1a" secondAttribute="topMargin" id="8E7-Rg-pGM"/>
-                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="firstBaseline" secondItem="7TX-Tu-MFv" secondAttribute="firstBaseline" id="dwR-Mr-XBF"/>
+                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="centerY" secondItem="zKn-EZ-V1a" secondAttribute="centerY" id="9ob-9S-c1u"/>
+                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="firstBaseline" secondItem="7TX-Tu-MFv" secondAttribute="firstBaseline" id="LXn-MN-34S"/>
+                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="baseline" secondItem="7TX-Tu-MFv" secondAttribute="baseline" id="Q60-o7-ah8"/>
+                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="top" secondItem="zKn-EZ-V1a" secondAttribute="topMargin" id="Qg7-7z-eJt"/>
+                                                <constraint firstItem="7TX-Tu-MFv" firstAttribute="leading" secondItem="wPR-Ev-KdP" secondAttribute="trailing" constant="69" id="Qnr-Sv-Mrm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7TX-Tu-MFv" secondAttribute="trailing" constant="10" id="j8B-3K-K3Q"/>
-                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="leading" secondItem="zKn-EZ-V1a" secondAttribute="leadingMargin" constant="10" id="qMa-mD-4Zy"/>
-                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="centerY" secondItem="zKn-EZ-V1a" secondAttribute="centerY" id="rOI-xB-UQ1"/>
-                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="baseline" secondItem="7TX-Tu-MFv" secondAttribute="baseline" id="siB-dn-yhf"/>
+                                                <constraint firstItem="wPR-Ev-KdP" firstAttribute="leading" secondItem="zKn-EZ-V1a" secondAttribute="leadingMargin" constant="10" id="vpR-oh-991"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

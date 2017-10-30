@@ -10,22 +10,31 @@ import UIKit
 
 class Drinks {
   
-  var current: [Drink]?
-  var beer: [Drink]?
-  var wine: [Drink]?
-  var spirits: [Drink]?
-  var soft: [Drink]?
+  var current: [Drink]? = [Drink(Name:"SELECT CATEGORY BELOW", Price: 0.0)]
+  var beer: [Drink]? = []
+  var wine: [Drink]? = []
+  var spirits: [Drink]? = []
+  var soft: [Drink]? = []
   
   init() {
     
-    //API call to populate categories
-    //TEST DATA
-    self.beer = [Drink(Name: "Carling", Price: 3.80), Drink(Name: "Fosters", Price: 4.00)]
-    self.wine = []
-    self.spirits = []
-    self.soft = [Drink(Name: "Coke", Price: 2.00),Drink(Name: "Fanta", Price: 1.80)]
+    GetDrinks(Category: "Beer", completionHandler: { response in
+      self.beer = response
+      self.current = self.beer
+    })
     
-    self.current = self.beer
+    GetDrinks(Category: "Wine", completionHandler: { response in
+      self.wine = response
+    })
+    
+    GetDrinks(Category: "Spirits", completionHandler: { response in
+      self.spirits = response
+    })
+    
+    GetDrinks(Category: "Soft", completionHandler: { response in
+      self.soft = response
+    })
+    
   }
   
 }

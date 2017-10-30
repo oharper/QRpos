@@ -43,16 +43,10 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //***FIX find method to tap on beer tab rather than just show as selected (to change the current category to beer)
     //Selects first item in tab bar
-    tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
+//    tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
     
     //Sets the initial text of total label
     totalLabel.text = "Total: £" + String(format: "%.2f", currentOrder.total)
-    
-    
-    GetDrinks(Category: "Wine", completionHandler: { response in
-      self.currentDrinks.wine = response
-    })
-    
   }
   
   override func didReceiveMemoryWarning() {
