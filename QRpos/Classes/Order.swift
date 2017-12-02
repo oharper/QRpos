@@ -17,8 +17,9 @@ class Order {
   var deliveryTable: String
   var paymentMethod: String
   var tabNumber: String
+  var preOrder: Bool
 
-  init(drinks:[OrderItem]? = [], orderStatus: String = "", deliveryTable: String = "", paymentMethod: String = "", currentEvent: String = "", total: Double = 0, tabNumber: String = "") {
+  init(drinks:[OrderItem]? = [], orderStatus: String = "", deliveryTable: String = "", paymentMethod: String = "", currentEvent: String = "", total: Double = 0, tabNumber: String = "", preOrder: Bool = false) {
 
     self.event = currentEvent
     self.drinks = drinks
@@ -27,6 +28,7 @@ class Order {
     self.paymentMethod = paymentMethod
     self.total =  total
     self.tabNumber = tabNumber
+    self.preOrder = preOrder
 
   }
   

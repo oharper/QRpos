@@ -13,7 +13,6 @@ class QRConfirmViewController: UIViewController, UITableViewDataSource, UITableV
   //MARK Outlets
   @IBOutlet weak var orderTable: UITableView!
   @IBOutlet weak var totalLabel: UILabel!
-  var tabNumber:String? = nil
   
   //MARK Variables
   var currentOrder = Order()
@@ -24,17 +23,41 @@ class QRConfirmViewController: UIViewController, UITableViewDataSource, UITableV
   }
   
   @IBAction func donePressed(_ sender: Any) {
+    
+    currentOrder.paymentMethod = "Tab"
+    
     if tableService {
       currentOrder.deliveryTable = currentOrder.tabNumber
+      currentOrder.orderStatus = "Awaiting Delivery"
       
-      //API call to store order in DB
+      api.createOrder(currentOrder) { (data, status) -> Void in
+        DispatchQueue.main.async(execute: {
+          if status == 200 {
+            print(data)
+          } else {
+            print("ERROR:"  + String(describing: status))
+          }
+        })
+      }
+      
       
       self.performSegue(withIdentifier: "qrConfirmToInitial", sender: nil)
+    } else {
+    
+    currentOrder.orderStatus = "Awaiting Delivery"
+    
+    api.createOrder(currentOrder) { (data, status) -> Void in
+      DispatchQueue.main.async(execute: {
+        if status == 200 {
+          print(data)
+        } else {
+          print("ERROR:"  + String(describing: status))
+        }
+      })
     }
     
-    //API call to store order in DB
-    
     self.performSegue(withIdentifier: "qrConfirmToInitial", sender: nil)
+    }
   }
   
     //MARK ViewDidLoad

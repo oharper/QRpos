@@ -28,7 +28,7 @@ class QRViewController: UIViewController {
         super.viewDidLoad()
 
       //PLACEHOLDER DATA
-      currentOrder.tabNumber = "2A"
+      currentOrder.tabNumber = "4"
     }
 
     override func didReceiveMemoryWarning() {

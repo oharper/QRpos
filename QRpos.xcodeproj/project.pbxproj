@@ -31,6 +31,7 @@
 		30935A551F9FEEC40056A380 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30935A541F9FEEC40056A380 /* NewOrderViewController.swift */; };
 		3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6021FA1036300810B35 /* CloseTabViewController.swift */; };
 		3097F6081FA1055D00810B35 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097F6071FA1055D00810B35 /* Drink.swift */; };
+		30AE36B41FA880F600F066DD /* ChooseEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE36B31FA880F600F066DD /* ChooseEventViewController.swift */; };
 		30E192D21FA7621600A7EC02 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E192D11FA7621600A7EC02 /* API.swift */; };
 		DDECAD052B81A54FB703DD33 /* Pods_QRposUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD89B3070B71A78DE5B89875 /* Pods_QRposUITests.framework */; };
 		E723E95FFDB0340DCEEDAC86 /* Pods_QRposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF0E6000557480A0B8CD0D /* Pods_QRposTests.framework */; };
@@ -83,6 +84,7 @@
 		30935A541F9FEEC40056A380 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		3097F6021FA1036300810B35 /* CloseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTabViewController.swift; sourceTree = "<group>"; };
 		3097F6071FA1055D00810B35 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		30AE36B31FA880F600F066DD /* ChooseEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEventViewController.swift; sourceTree = "<group>"; };
 		30E192D11FA7621600A7EC02 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		341EEC95D6B5B1B67BF54A60 /* Pods-QRpos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRpos.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRpos/Pods-QRpos.release.xcconfig"; sourceTree = "<group>"; };
 		555FF2327FE48C1116CEBC4D /* Pods_QRpos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRpos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,7 @@
 		301EC0D91F9D3EC30097915B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30AE36B31FA880F600F066DD /* ChooseEventViewController.swift */,
 				3086F4841F7D9107006F5C92 /* InitialViewController.swift */,
 				3097F6021FA1036300810B35 /* CloseTabViewController.swift */,
 				30935A541F9FEEC40056A380 /* NewOrderViewController.swift */,
@@ -539,6 +542,7 @@
 				30E192D21FA7621600A7EC02 /* API.swift in Sources */,
 				301ADBCF1FA3922B00E016EE /* CashViewController.swift in Sources */,
 				307724B31FA51CF900493B91 /* Alerts.swift in Sources */,
+				30AE36B41FA880F600F066DD /* ChooseEventViewController.swift in Sources */,
 				301ADBCD1FA3922000E016EE /* QRViewController.swift in Sources */,
 				3097F6031FA1036300810B35 /* CloseTabViewController.swift in Sources */,
 				301ADBD31FA3A5C200E016EE /* QRConfirmViewController.swift in Sources */,

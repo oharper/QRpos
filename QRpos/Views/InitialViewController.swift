@@ -16,9 +16,10 @@ class InitialViewController: UIViewController {
   @IBOutlet weak var newOrderButton: UIButton!
   @IBOutlet weak var closeTabButton: UIButton!
   @IBOutlet weak var openOrdersButton: UIButton!
-  @IBOutlet weak var currentEventLabel: UILabel!
   @IBOutlet weak var tableServiceSwitch: UISwitch!
   @IBOutlet weak var iPadLabel: UILabel!
+  
+  @IBOutlet weak var currentEventButton: UIButton!
   
   //MARK Actions
   
@@ -43,6 +44,7 @@ class InitialViewController: UIViewController {
     }
   }
   
+  
   //MARK ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,14 +58,11 @@ class InitialViewController: UIViewController {
     openOrdersButton.clipsToBounds = true
     
     //Set current event label
-    currentEventLabel.text = currentEvent
+    currentEventButton.setTitle(currentEvent, for: .normal)
     
     if tableService {
       tableServiceSwitch.setOn(true, animated: true)
     }
-    
-    
-      
     
   }
   

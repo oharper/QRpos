@@ -22,7 +22,7 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   
   //MARK Actions
   @IBAction func voidPressed(_ sender: Any) {
-    performSegue(withIdentifier: "newOrderToInitial", sender: nil)
+    self.dismiss(animated: false, completion: nil)
   }
   
   @IBAction func donePressed(_ sender: Any) {
@@ -41,12 +41,22 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
     self.orderTable.delegate = self
     self.tabBar.delegate = self
     
-    //***FIX find method to tap on beer tab rather than just show as selected (to change the current category to beer)
-    //Selects first item in tab bar
-//    tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
+    api.getDrinks() { (drinks, status) -> Void in
+      DispatchQueue.main.async(execute: {
+        if status == 200 {
+          self.currentDrinks = drinks!
+          self.drinkSelectTable.reloadData()
+        } else {
+        }
+      })
+    }
+    
+    tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
     
     //Sets the initial text of total label
     totalLabel.text = "Total: £" + String(format: "%.2f", currentOrder.total)
+    
+    currentOrder.event = currentEvent
   }
   
   override func didReceiveMemoryWarning() {
@@ -61,7 +71,7 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if tableView.tag == 1 {
-      return currentDrinks.current!.count
+      return currentDrinks.current.count
     } else {
       return currentOrder.drinks!.count
     }
@@ -70,8 +80,8 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if tableView.tag == 1 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkSelectionCell", for: indexPath) as! DrinkSelectionCell
-      cell.name.text = currentDrinks.current![indexPath.row].name
-      cell.price.text = "£" + String(format: "%.2f", currentDrinks.current![indexPath.row].price)
+      cell.name.text = currentDrinks.current[indexPath.row].name
+      cell.price.text = "£" + String(format: "%.2f", currentDrinks.current[indexPath.row].price)
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
@@ -85,7 +95,7 @@ class NewOrderViewController: UIViewController, UITableViewDataSource, UITableVi
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     if tableView.tag == 1 {
-      addToOrder(Drink: currentDrinks.current![indexPath.row])
+      addToOrder(Drink: currentDrinks.current[indexPath.row])
     } else {
       removeFromOrder(Drink: currentOrder.drinks![indexPath.row].drink)
     }

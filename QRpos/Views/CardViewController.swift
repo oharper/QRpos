@@ -22,6 +22,9 @@ class CardViewController: UIViewController {
   }
   
   @IBAction func donePressed(_ sender: Any) {
+    
+    currentOrder.paymentMethod = "Card"
+    
     if tableService {
       //1. Create the alert controller.
       let alert = UIAlertController(title: "Enter Table", message: "Please enter a table number for delivery of order.", preferredStyle: .alert)
@@ -35,18 +38,38 @@ class CardViewController: UIViewController {
       // 3. Grab the value from the text field, and print it when the user clicks OK.
       alert.addAction(UIAlertAction(title: "Confirm Table", style: .default, handler: { [weak alert] (_) in
         self.currentOrder.deliveryTable = (alert?.textFields![0].text)!
+        self.currentOrder.orderStatus = "Awaiting Delivery"
         
-        //API call to add order to database
+        api.createOrder(self.currentOrder) { (data, status) -> Void in
+          DispatchQueue.main.async(execute: {
+            if status == 200 {
+              print(data)
+            } else {
+              print("ERROR:"  + String(describing: status))
+            }
+          })
+        }
         
         self.performSegue(withIdentifier: "cardToInitial", sender: nil)
       }))
       // 4. Present the alert.
       self.present(alert, animated: true, completion: nil)
+    } else {
+    
+    currentOrder.orderStatus = "Complete"
+    
+    api.createOrder(currentOrder) { (data, status) -> Void in
+      DispatchQueue.main.async(execute: {
+        if status == 200 {
+          print(data)
+        } else {
+          print("ERROR:"  + String(describing: status))
+        }
+      })
     }
     
-    //API call to add order to database
-    
     self.performSegue(withIdentifier: "cardToInitial", sender: nil)
+    }
   }
   
   //MARK ViewDidLoad

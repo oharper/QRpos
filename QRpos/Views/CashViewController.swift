@@ -17,6 +17,7 @@ class CashViewController: UIViewController {
   
   //MARK Variables
   var currentOrder = Order()
+  var orderID: Int?
   
   //MARK Actions
   @IBAction func calculatePressed(_ sender: Any) {
@@ -27,6 +28,9 @@ class CashViewController: UIViewController {
   }
   
   @IBAction func donePressed(_ sender: Any) {
+    
+    currentOrder.paymentMethod = "Cash"
+    
     if tableService {
     //1. Create the alert controller.
     let alert = UIAlertController(title: "Enter Table", message: "Please enter a table number for delivery of order.", preferredStyle: .alert)
@@ -42,15 +46,51 @@ class CashViewController: UIViewController {
       self.currentOrder.deliveryTable = (alert?.textFields![0].text)!
       self.currentOrder.orderStatus = "Awaiting Delivery"
       
-      //API call to add order to database
+      api.createOrder(self.currentOrder) { (data, status) -> Void in
+        DispatchQueue.main.async(execute: {
+          if status == 200 {
+            self.orderID = data
+          } else {
+            print("ERROR:"  + String(describing: status))
+          }
+        })
+      }
       
       self.performSegue(withIdentifier: "cashToInitial", sender: nil)
     }))
     // 4. Present the alert.
     self.present(alert, animated: true, completion: nil)
-  }
-    
-    //API call to add order to database
+    } else {
+      
+      //API call to add order to database
+      currentOrder.orderStatus = "Complete"
+      
+      api.createOrder(currentOrder) { (data, status) -> Void in
+        DispatchQueue.main.async(execute: {
+          if status == 200 {
+            self.orderID = data
+            
+            
+            api.addDrinks(order: self.currentOrder, orderID: self.orderID!) { (status) -> Void in
+              DispatchQueue.main.async(execute: {
+                if status == 200 {
+                  
+                } else {
+                  print("ERROR:"  + String(describing: status))
+                }
+              })
+            }
+            
+            
+          } else {
+            print("ERROR:"  + String(describing: status))
+          }
+        })
+      }
+      
+      
+
+    }
     
     self.performSegue(withIdentifier: "cashToInitial", sender: nil)
   }
